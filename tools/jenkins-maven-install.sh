@@ -20,15 +20,15 @@ yum install -y apache-maven
 
 ## Configure MAVEN_HOME and PATH Environment Variables
 rm .bash_profile
-wget https://raw.githubusercontent.com/awanmbandi/realworld-cicd-pipeline-project/jenkins-master-client-config/.bash_profile
+wget https://raw.githubusercontent.com/awanmbandi/realworld-cicd-pipeline-project/jenkins-master-client-config/.bash_profile #I can use this or create one in my personal repo
 source .bash_profile
 mvn -v
 
 # Create ".m2" and download your "settings.xml" file into it to Authorize Maven
 ## Make sure to Update the RAW GITHUB Link to your "settings.xml" config
-mkdir /var/lib/jenkins/.m2
-wget https://raw.githubusercontent.com/awanmbandi/realworld-cicd-pipeline-project/jenkins-maven-sonarqube-nexus/settings.xml -P /var/lib/jenkins/.m2/
-chown -R jenkins:jenkins /var/lib/jenkins/.m2/
+mkdir /var/lib/jenkins/.m2        
+wget https://github.com/EngineerChris/jenkins-maven-sonarqube-nexus-project/blob/main/settings.xml -P /var/lib/jenkins/.m2/  #downloading settings.xml file and place it in /var/lib/jenkins/ the home diretoty of jenkins server
+chown -R jenkins:jenkins /var/lib/jenkins/.m2/  #Recurssively (R)  set the ownership of the .m2 directory  and file settings.xml to user, jenkins and group jenkins
 chown -R jenkins:jenkins /var/lib/jenkins/.m2/settings.xml
 
 # Installing Git

@@ -84,7 +84,7 @@ resource "aws_security_group" "nexus_sg" {
 
 resource "aws_instance" "jenkins-maven" {
   ami                         = "ami-0dc2d3e4c0f9ebd18" # Amazon Linux 2 AMI ID
-  instance_type               = "t2.micro"
+  instance_type               = "t2.mdium"
   key_name                    = var.my-key-name
   security_groups             = [aws_security_group.jenkins-maven_sg.id]
   user_data                   = file("./tools/jenkins-maven-install.sh")

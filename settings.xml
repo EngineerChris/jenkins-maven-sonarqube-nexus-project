@@ -70,8 +70,8 @@ under the License.
      <repositories>
        <repository>
          <id>nexus-release-repo</id>
-         <name>your custom repo</name>
-         <url>http://ARTIFACTORY_IP_ADDRESS:PORT_NUMBER/repository/RELEASE_REPOSITORY_NAME/</url>
+         <name>your custom repo</name> 
+         <url>http://ARTIFACTORY_IP_ADDRESS:PORT_NUMBER/repository/SNAPSHOT_REPOSITORY_NAME/</url>
        </repository>
      </repositories>
    </profile>
